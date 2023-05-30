@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <SearchContextProvider>
         <NavBar />
+        <MoviesHome />
       </SearchContextProvider>
     </div>
   );
