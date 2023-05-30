@@ -1,0 +1,44 @@
+import { createContext, useState, useEffect } from "react";
+
+export const SearchContext = createContext();
+
+const SearchContextProvider = (props) => {
+  const [items, setItems] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [originalItems, setOriginalItems] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const url =
+        "https://online-movie-database.p.rapidapi.com/auto-complete?q=game";
+      const options = {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key":
+            "bca07a01aemshc113c7875dd1d6bp1795f8jsn2f8e6671d464",
+          "X-RapidAPI-Host": "online-movie-database.p.rapidapi.com",
+        },
+      };
+
+      try {
+        const response = await fetch(url, options);
+        const result = await response.json();
+        console.log(result);
+        setItems(result.d);
+        setOriginalItems(result.d);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchData();
+  }, []);
+  return (
+    <SearchContext.Provider
+      value={{ items, setItems, loading, setLoading, originalItems }}
+    >
+      {props.children}
+    </SearchContext.Provider>
+  );
+};
+
+export default SearchContextProvider;
