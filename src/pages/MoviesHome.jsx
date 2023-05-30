@@ -9,7 +9,7 @@ const MoviesHome = () => {
   return (
     <div className="flex flex-wrap justify-evenly items-center">
       <div className="font-bold w-full h-5 flex items-center justify-center">
-        {/* {items.length < 1 && "Item not available"} */}
+        {items.length < 1 && "Movie not available"}
       </div>
       {items.map((item) => (
         <MovieCard item={item} key={item.id} />

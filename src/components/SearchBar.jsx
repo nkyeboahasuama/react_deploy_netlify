@@ -23,7 +23,7 @@ export const SearchBar = () => {
 
   const searchItem = debounce((query) => {
     const searchResults = originalItems.filter((item) =>
-      item.l.toLowerCase().includes(query.toLowerCase())
+      item.title.toLowerCase().includes(query.toLowerCase())
     );
     setItems(searchResults);
     console.log(searchResults);

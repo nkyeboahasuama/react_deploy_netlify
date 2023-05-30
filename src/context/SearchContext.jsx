@@ -10,7 +10,7 @@ const SearchContextProvider = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       const url =
-        "https://online-movie-database.p.rapidapi.com/auto-complete?q=game";
+        "https://online-movie-database.p.rapidapi.com/title/v2/find?title=game&titleType=game&limit=30";
       const options = {
         method: "GET",
         headers: {
@@ -24,8 +24,8 @@ const SearchContextProvider = (props) => {
         const response = await fetch(url, options);
         const result = await response.json();
         console.log(result);
-        setItems(result.d);
-        setOriginalItems(result.d);
+        setItems(result.results);
+        setOriginalItems(result.results);
       } catch (error) {
         console.error(error);
       }
