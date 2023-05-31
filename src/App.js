@@ -12,7 +12,7 @@ function App() {
         <NavBar />
         <BrowserRouter>
           <Routes>
-            <Route exact path="/home" element={<MoviesHome />} />
+            <Route exact path="/" element={<MoviesHome />} />
 
             <Route path="/details/:movieId" element={<ExploreMovie />} />
           </Routes>

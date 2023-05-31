@@ -2,7 +2,6 @@ import { useContext } from "react";
 import MovieCard from "../components/MovieCard";
 
 import { SearchContext } from "../context/SearchContext";
-
 const MoviesHome = () => {
   const { items } = useContext(SearchContext);
 
