@@ -4,7 +4,6 @@ export const SearchContext = createContext();
 
 const SearchContextProvider = (props) => {
   const [items, setItems] = useState([]);
-  const [loading, setLoading] = useState(false);
   const [originalItems, setOriginalItems] = useState([]);
 
   useEffect(() => {
@@ -32,10 +31,9 @@ const SearchContextProvider = (props) => {
     };
     fetchData();
   }, []);
+
   return (
-    <SearchContext.Provider
-      value={{ items, setItems, loading, setLoading, originalItems }}
-    >
+    <SearchContext.Provider value={{ items, setItems, originalItems }}>
       {props.children}
     </SearchContext.Provider>
   );
