@@ -37,7 +37,7 @@ const ExploreMovie = () => {
     <div>
       <button
         className="bg-blue-600 p-3 mx-10 mt-2 text-white hover:bg-blue-800"
-        onClick={() => navigate("/home")}
+        onClick={() => navigate("/")}
       >
         Go Home
       </button>
