@@ -26,7 +26,6 @@ export const SearchBar = () => {
       item.title.toLowerCase().includes(query.toLowerCase())
     );
     setItems(searchResults);
-    console.log(searchResults);
   });
 
   return (

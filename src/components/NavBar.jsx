@@ -6,9 +6,9 @@ const NavBar = () => {
     <div>
       <nav className="bg-gray-800 px-8 w-full flex h-10 text-white items-center gap-6 justify-between">
         <div className="flex gap-7 m-5 items-center">
-          <h1 className="font-bold">MovieHub</h1>
+          <h1 className="font-bold bg-red-700">MovieHub</h1>
         </div>
-        <div className="p-3 m-5 flex items-center justify-center gap-7 max-w-2xl w-full text-black">
+        <div className="p-3 m-5 flex items-center justify-center gap-7 max-w-xl w-full text-black">
           <SearchBar />
         </div>
 

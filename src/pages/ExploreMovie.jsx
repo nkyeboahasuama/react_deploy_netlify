@@ -23,12 +23,9 @@ const ExploreMovie = () => {
           options
         );
         const result = await response.json();
-        console.log(result);
-        console.log("ok");
         setMovie(result);
       } catch (error) {
         console.error(error);
-        console.log("not ok", movieId);
       }
     };
     fetchData();
@@ -46,7 +43,7 @@ const ExploreMovie = () => {
           <img
             src={`${movie?.image?.url}`}
             alt="pro"
-            className="bg-red-600 w-3/4 h-3/4 mt-2 rounded-lg"
+            className="w-3/4 h-3/4 mt-2 rounded-lg"
           />
           <div className="bg-gray-600 w-full h-28 flex flex-col items-center justify-center rounded-b-3xl">
             <h2 className="font-bold text-xl text-center px-1">
